@@ -61,29 +61,44 @@
         <label for="message">Message :</label>
         <textarea cols="30" rows="5" id="message" name="message"></textarea>
     </div>
+ 
+  <div>
+    <label for="subject">Subject</label>
+    <select id="subject">
+         <optgroup label="Product Issues">
+                <option value="returns">Returns</option>
+                <option value="faulty_item">Faulty Items</option>
+         </optgroup>
+        <optgroup label="Delivery">
+                <option value="delivery">Delivery</option>
+                <option value="order_tracking">Order Tracking</option>
+        </optgroup>
+         <optgroup label="Other">
+                <option value="advice">Advice</option>
+                <option value="other">Other</option>
+         </optgroup>
+     </select>
+  </div>  
 
 <div>
 <p>Subscribe to Futue Offers</p>
 <label for="newsletter">News Letter </label>
 <input type="checkbox" id="newsletter" name="Subscribe" value="newsletter">
-
 <label for="email">Email </label> 
 <input type="checkbox" id="email" name="Subscribe" value="email">
-
 <label for="post">Post</label>
 <input type="checkbox" id="post" name="Subscribe" value="post">
-
 </div>
+
 <div>
 <p>How would you like us to respond?</p>
 <!--for raido button to enable one choise we should grou them by name-->
 <label for="phoneRespone">Phone</label>
 <input type="radio" id="phoneRespone" name="response" value="phone">
-
 <label for="emailResponse">Email </label>
 <input type="radio" id="emailResponse" name="response" value="email">
-
 </div>
+
 </form>
                 
 </main>
