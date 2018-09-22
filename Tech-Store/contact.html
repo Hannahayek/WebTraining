@@ -48,19 +48,40 @@
 <h2>Contact US</h2>
 <form>
     <div>
-        <label for="name">Name:</label><input type="text" placeholder="Enter your Name" id="name" name="name">
- 
+        <label for="name">Name:</label>
+        <input type="text" placeholder="Enter your Name" id="name" name="name">
     </div>
+
+     <div>
+        <label for="email">Email :</label>
+        <input type="email" placeholder="Enter your Email" id="email" name="email">
+    </div>
+    
+    <div>
+        <label for="message">Message :</label>
+        <textarea cols="30" rows="5" id="message" name="message"></textarea>
+    </div>
+
 <div>
-        <label for="email">Email :</label><input type="email" placeholder="Enter your Email" id="email" name="email">
+<p>Subscribe to Futue Offers</p>
+<label for="newsletter">News Letter </label>
+<input type="checkbox" id="newsletter" name="Subscribe" value="newsletter">
+
+<label for="email">Email </label> 
+<input type="checkbox" id="email" name="Subscribe" value="email">
+
+<label for="post">Post</label>
+<input type="checkbox" id="post" name="Subscribe" value="post">
+
 </div>
 <div>
-        <label for="message">Message :</label><textarea cols="30" rows="5" id="message" name="message"></textarea>
-</div>
-<div>
-<p>Subscribe for Future News Letter</p>
-<label id="newsletter">News Letter</label>
-<input type="checkbox" id="newsletter>"
+<p>How would you like us to respond?</p>
+<!--for raido button to enable one choise we should grou them by name-->
+<label for="phoneRespone">Phone</label>
+<input type="radio" id="phoneRespone" name="response" value="phone">
+
+<label for="emailResponse">Email </label>
+<input type="radio" id="emailResponse" name="response" value="email">
 
 </div>
 </form>
