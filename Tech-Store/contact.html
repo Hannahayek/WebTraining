@@ -62,7 +62,7 @@
         <textarea cols="30" rows="5" id="message" name="message"></textarea>
     </div>
  
-  <div>
+ <!--  <div>
     <label for="subject">Subject</label>
     <select id="subject">
          <optgroup label="Product Issues">
@@ -78,8 +78,19 @@
                 <option value="other">Other</option>
          </optgroup>
      </select>
-  </div>  
-
+  </div>   -->
+<div>
+    <label for="subject">Subject</label>
+    <input type="text" list="subjects" id="subject" placeholder="Enter your Subbject">
+    <datalist id="subjects">
+        <option value="returns">
+        <option value="faulty item">
+        <option value="delivery">
+         <option value="order tracking">
+        <option value="advice">
+        <option value="other">
+    </datalist>
+</div>
 <div>
 <p>Subscribe to Futue Offers</p>
 <label for="newsletter">News Letter </label>
@@ -98,7 +109,11 @@
 <label for="emailResponse">Email </label>
 <input type="radio" id="emailResponse" name="response" value="email">
 </div>
-
+<div>
+<input type="submit"> 
+<!-- <button type="submit">Submit</button> -->
+</div>
+<input type="color">
 </form>
                 
 </main>
