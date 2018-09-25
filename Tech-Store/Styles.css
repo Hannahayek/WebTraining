@@ -44,7 +44,7 @@ aside {
       margin: 0;
     }
   .product{
-  
+   box-sizing: border-box;
     border: 1px solid gray;
     width: 210px;
     margin: 5px;
