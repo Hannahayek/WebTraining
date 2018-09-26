@@ -29,6 +29,7 @@ display: inline-block;
 main {
   width: 680px;
   display: inline-block;
+  padding: 10px;
 }
 
 aside {
@@ -37,12 +38,21 @@ aside {
   width: 270px;
   display: inline-block;
   vertical-align: top;
+  padding: 10px;
 }
     ul {
 
       padding: 0;
       margin: 0;
     }
+
+li 
+{
+
+  list-style: none;
+line-height: 30px;
+}
+
   .product{
    box-sizing: border-box;
     border: 1px solid gray;
