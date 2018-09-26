@@ -88,6 +88,14 @@ max-width: 100%;
    display: inline-block;
  }
 
+ .button:last-of-type
+{
+  background:#0e69e9;
+  color: white;
+}
+
  p:first-of-type{
    color:red;
  }
+
+ 
