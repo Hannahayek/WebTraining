@@ -108,3 +108,13 @@ width: 660px;
   max-width: 50%;
   float: left;
 }
+
+/* position * example but not usesd/
+#position
+{
+position: fixed;
+top:10px;
+left:10px;
+}
+
+*/
