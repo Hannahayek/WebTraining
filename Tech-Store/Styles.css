@@ -15,7 +15,11 @@ html{
     header,footer {
         background: #333a40;
         color:white;
+      padding:20px 10px;
+       
     }
+
+
 
 header li{
 display: inline;
@@ -27,9 +31,13 @@ display: inline;
 header h1,nav
 {
 display: inline-block;
+
+
 }
 
-
+header h1{
+  width:70%;
+}
 main {
   width: 680px;
   display: inline-block;
@@ -75,7 +83,7 @@ color: #0e6969;
     margin: 5px;
     padding: 5px;
     display: inline-block;
-   
+   text-align: center;
   }
   
   img{
@@ -92,11 +100,14 @@ max-width: 100%;
 {
   background:#0e69e9;
   color: white;
+  
 }
 
  p:first-of-type{
    color:red;
+   
  }
+ 
 
  /* product details style */
  .product-detail{
@@ -108,6 +119,7 @@ width: 660px;
   max-width: 50%;
   float: left;
 }
+
 
 /* position * example but not usesd/
 #position
@@ -143,4 +155,33 @@ input[type="text"],input[type="email"],textarea
 {
 width: 400px;
 padding: 10px;
+}
+
+
+/*table--- marging 20 for top/buttom 0 leftright */
+
+table {
+
+  width: 400px;
+  text-align: left;
+  margin:20px 0;
+}
+
+caption{
+
+  font-weight: bold;
+  font-style: italic;
+  border-bottom: 1px dotted;
+  padding: 10px;
+
+}
+
+th,td {
+padding: 10px
+
+}
+
+/* table row */
+tr:hover{
+background-color: #f7f7f7;
 }
