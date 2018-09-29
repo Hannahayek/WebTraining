@@ -8,10 +8,15 @@ html{
 
     font-family: 'Barlow', sans-serif;
     background: white;
-    max-width: 80vw;
+    /* max-width: 80vw; */
     margin: 0 auto;
-    color: rgb(49,46,46)
+    color: rgb(49,46,46);
+    text-align:center;
+    
     }
+    
+    
+    
     header,footer {
         background: #333a40;
         color:white;
@@ -20,6 +25,10 @@ html{
     }
 
 
+    input[type="search"]{
+
+      width: 100%;
+    }
 
 header li{
 display: inline;
@@ -194,7 +203,7 @@ background-color: #f7f7f7;
 
 /* https://www.w3schools.com/css/css_rwd_mediaqueries.asp good link as referense *?
 /* list will be red with width >= 600px <700 */
-@media(min-width:600px) and (max-width:600px){
+/* @media(min-width:600px) and (max-width:600px){
   li {
 
     color:red;
@@ -203,10 +212,11 @@ background-color: #f7f7f7;
 }
 
 /* body change color when print */
-@media print {
+/* @media print {
   body {
 
     color:green;
   }
 
-}
+} */
+ 
