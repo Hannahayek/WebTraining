@@ -9,7 +9,12 @@
      #container{
          display:flex;
          /* flex-direction: row-reverse; */
-         flex-direction: column-reverse;
+         /* flex-direction: row; */
+        /* items will wrap in multiple lines*/
+         /* flex-wrap: wrap; */
+         /*below value mixes row with wrap */
+         flex-flow: row wrap;
+         justify-content: space-evenly;
      }
     .item{
        background-color: lightcoral;
@@ -21,6 +26,12 @@
 </head>
 <body>
    <div id="container">
+       <div class="item">item 1</div>
+       <div class="item">item 2</div>
+       <div class="item">item 3</div>
+       <div class="item">item 4</div>
+       <div class="item">item 5</div>
+       <div class="item">item 6</div>
        <div class="item">item 1</div>
        <div class="item">item 2</div>
        <div class="item">item 3</div>
