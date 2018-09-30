@@ -108,6 +108,9 @@ max-width: 100%;
  
 
  /* product details style */
+ 
+ 
+ 
  .product-detail{
 width: 660px;
 }
@@ -130,6 +133,21 @@ left:10px;
 */
 
 /* contact us page 8*/
+
+@media (max-width:800px){
+  input[type="search"]{
+width:40%;
+margin-left: 2em;
+  
+
+}
+.product-detail {
+  display: inline-block;
+  width:48%;
+
+}
+}
+
 
 form {
 
@@ -179,6 +197,8 @@ padding: 10px
 
 }
 
+
+
 /* table row */
 tr:hover{
 background-color: #f7f7f7;
@@ -194,6 +214,12 @@ margin-left: 2em;
   display: inline-block;
   width:48%;
 }
+.product-detail {
+  display: inline-block;
+  width:48%;
+
+}
+
 }
 
 /* all included under media min width */
@@ -241,6 +267,9 @@ body {
   width: 30%;
 }
 
+.product-detail{
+  width: 30%;
+}
 input[type="search"]{
 
   width: 20%;
