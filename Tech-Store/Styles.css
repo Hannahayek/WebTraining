@@ -8,7 +8,6 @@ html{
 
     font-family: 'Barlow', sans-serif;
     background: white;
-    /* max-width: 80vw; */
     margin: 0 auto;
     color: rgb(49,46,46);
     text-align:center;
@@ -49,25 +48,7 @@ header h1{
   width:100%;
 }
 
-/*  target/context=result    */
-/* 680 /1000(body)=.68 */
-/*width was 680px changed to above calculations for fluid  */
-main {
-  /* width: 68%;
-  display: inline-block;
-  padding: 10px; */
-}
 
-
-aside {
-/*  target/context=result    */
-/* 279 /1000(body)=.68 */
-/*width was 680px changed to above calculations for fluid  */
-  /* width: 27%;
-  display: inline-block;
-  vertical-align: top;
-  padding: 10px; */
-}
     ul {
 
       padding: 0;
@@ -215,8 +196,67 @@ margin-left: 2em;
 }
 }
 
+/* all included under media min width */
+@media(min-width:1000px){
+
+body {
+
+  text-align: left;
+}
+
+header h1 {
+
+  width: 60%;
+}
+/*  target/context=result    */
+/* 680 /1000(body)=.68 */
+/*width was 680px changed to above calculations for fluid  */
+main {
+   width: 68%;
+  display: inline-block;
+  padding: 10px; 
+}
 
 
+aside {
+/*  target/context=result    */
+/* 279 /1000(body)=.68 */
+/*width was 680px changed to above calculations for fluid  */
+   width: 27%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px; 
+}
+
+}
+
+
+@media (min-width:1200px){
+
+body {
+
+    max-width: 80vw; 
+}
+.product {
+  width: 30%;
+}
+
+input[type="search"]{
+
+  width: 20%;
+}
+
+}
+
+
+
+
+
+
+
+
+
+/* all included under media min width */
 
 
 
