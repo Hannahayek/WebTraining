@@ -203,6 +203,23 @@ tr:hover{
 background-color: #f7f7f7;
 }
 
+@media (min-width:800px){
+  input[type="search"]{
+width:40%;
+margin-left: 2em;
+  }
+.product {
+
+  display: inline-block;
+  width:48%;
+}
+}
+
+
+
+
+
+
 /* https://www.w3schools.com/css/css_rwd_mediaqueries.asp good link as referense *?
 /* list will be red with width >= 600px <700 */
 /* @media(min-width:600px) and (max-width:600px){
@@ -221,4 +238,6 @@ background-color: #f7f7f7;
   }
 
 } */
+
+
  
