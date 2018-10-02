@@ -14,11 +14,11 @@
          /* flex-wrap: wrap; */
          /*below value mixes row with wrap */
          background: lightgreen;
-         height: 100vh;
+        
          flex-flow: row wrap;
          /* justify-content: space-evenly;
          align-items: baseline; */
-         align-content: space-between;
+         /* align-content: space-between; */
      }
     .item{
        background-color: lightcoral;
@@ -26,24 +26,17 @@
        margin:10px;
        text-align: center;
     }
+    .order {
+
+order: -1;
+
+    }
     </style>
 </head>
 <body>
    <div id="container">
        <div class="item">item 1</div>
-       <div class="item" >item 2</div>
-       <div class="item">item 3</div>
-       <div class="item">item 4</div>
-       <div class="item" >item 5</div>
-       <div class="item">item 6</div>
-       <div class="item"> item 1</div>
-       <div class="item" >item 2</div>
-       <div class="item">item 3</div>
-       <div class="item">item 4</div>
-       <div class="item" >item 5</div>
-       <div class="item">item 6</div>
-       <div class="item"> item 1</div>
-       <div class="item" >item 2</div>
+       <div class="item order" >item 2</div>
        <div class="item">item 3</div>
        <div class="item">item 4</div>
        <div class="item" >item 5</div>
