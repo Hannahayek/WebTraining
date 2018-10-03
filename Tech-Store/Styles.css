@@ -278,9 +278,37 @@ input[type="search"]{
 }
 
 
+#container{
+  display:flex;
+  width:600px;
 
+  /* flex-direction: row-reverse; */
+  /* flex-direction: row; */
+ /* items will wrap in multiple lines*/
+ flex-wrap: wrap; 
+  /*below value mixes row with wrap */
+ 
+  
+ 
+  /* flex-flow: row wrap; */
+  /* justify-content: space-evenly;
+  align-items: baseline; */
+  /* align-content: space-between; */
+}
+.item{
+/* background-color: lightcoral; */
+padding:10px;
+margin:10px;
+text-align: center;
 
+/* flex-basis: 160px; */
+/*  1 flex grow 1 flex shrink auto flex basis  */
+flex: 1 1 auto;
+}
 
+.order {
+  order:-1;
+}
 
 
 
