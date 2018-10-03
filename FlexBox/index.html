@@ -8,6 +8,7 @@
     <style>
      #container{
          display:flex;
+         width:600px;
          /* flex-direction: row-reverse; */
          /* flex-direction: row; */
         /* items will wrap in multiple lines*/
@@ -15,7 +16,7 @@
          /*below value mixes row with wrap */
          background: lightgreen;
         
-         flex-flow: row wrap;
+         /* flex-flow: row wrap; */
          /* justify-content: space-evenly;
          align-items: baseline; */
          /* align-content: space-between; */
@@ -25,22 +26,21 @@
        padding:10px;
        margin:10px;
        text-align: center;
+       
+       /* flex-basis: 160px; */
+       /*  1 flex grow 1 flex shrink auto flex basis  */
+       flex: 1 1 auto;
     }
-    .order {
-
-order: -1;
-
-    }
+  
     </style>
 </head>
 <body>
    <div id="container">
-       <div class="item">item 1</div>
-       <div class="item order" >item 2</div>
-       <div class="item">item 3</div>
-       <div class="item">item 4</div>
-       <div class="item" >item 5</div>
-       <div class="item">item 6</div>
+       <div class="item" style="flex-shrink: 1">item 1</div>
+       <div class="item " style="flex-shrink: 1">item 2</div>
+       <div class="item" style="flex-shrink: 2">item 3</div>
+       <div class="item" style="flex-shrink: 1">item 4</div>
+       
        
         </div> 
 </body>
