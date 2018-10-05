@@ -10,11 +10,11 @@
        display: grid;
          background: lightgreen;
          /* we specify the comlumns 100 first cloumn 300 second auto for rest*/
-         grid-template-columns: 100px 300px auto;
-         grid-template-columns: 200px 150px 100px;
+         grid-template-columns: repeat(3 ,1fr) ;
+         grid-template-rows: repeat(3,150px);
          /* grid-column-gap: 10PX;
          grid-row-gap: 10px; */
-         /* instead of above life, we can use one below line*/
+         /* instead of above life, we can use one below line row columns*/
          grid-gap: 20px 10px;
      }
     .item{
