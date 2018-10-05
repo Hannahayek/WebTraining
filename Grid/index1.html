@@ -23,16 +23,17 @@
      }
     .item{
        background-color: lightcoral;
-       padding:10px;
+       /* padding:30px; */
+       height: 60px;
      }
      .item1{
 
          background-color: lightblue;
-          grid-row-start: row-start;
+          /* grid-row-start: row-start;
          grid-row-end: row-end 4;
          /* col-start and col-end names taken from container grid template columns */
-         grid-column-start: col-start;
-         grid-column-end: col-end 2; 
+         /* grid-column-start: col-start;
+         grid-column-end: col-end 2;  */
         
          /* instead of above lines */
          /* grid-row: 2/4;
@@ -45,6 +46,8 @@
 
          /* span way span across 3 rows*/
          /* grid-area: 2/3/span 3/5; */
+         justify-self: center;
+         align-self: center;
 
      }
      header {
@@ -57,8 +60,12 @@ main{
     grid-column: content;
     display: grid;
     grid-gap:5px;
-    grid-template-columns: repeat(4,1fr);
-    grid-template: repeat(1fr);
+    /* grid-template-columns: repeat(4,1fr);
+    grid-template: repeat(1fr); */
+     justify-items: center;
+     /*
+    height: 1200px;
+    align-items: center; */
 }
 
 sidebar {
@@ -83,8 +90,8 @@ header,main,aside,footer{
 <body>
    <div id="container">
       <header>Header</header>
-      <main><div class="item">item 1</div>
-        <div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed id optio, dolor necessitatibus doloremque ratione quam fuga cumque recusandae quasi enim, quaerat dicta reiciendis corrupti officiis iste, natus ex rem!</div>
+      <main><div class="item1">item 1</div>
+        <div class="item">item 2</div>
         <div class="item">item 3</div>
         <div class="item">item 4</div>
         <div class="item">item 5</div>
