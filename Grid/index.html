@@ -10,8 +10,8 @@
        display: grid;
          background: lightgreen;
          /* we specify the comlumns 100 first cloumn 300 second auto for rest*/
-         grid-template-columns: minmax(160px,200px) 1fr 2fr ;
-         grid-template-rows: repeat(3,150px);
+         grid-template-columns: repeat(4,1fr) ;
+         grid-template-rows: repeat(3,1fr);
          /* grid-column-gap: 10PX;
          grid-row-gap: 10px; */
          /* instead of above life, we can use one below line row columns*/
@@ -20,22 +20,47 @@
     .item{
        background-color: lightcoral;
        padding:10px;
-     
-      
-    }
+     }
+     .item1{
+
+         background-color: lightblue;
+         /* grid-row-start: 2;
+         grid-row-end: 4;
+         grid-column-start: 3;
+         grid-column-end: 5 */
+        
+         /* instead of above lines */
+         /* grid-row: 2/4;
+         grid-column: 3/5; */
+
+         /*or row/column/row/columns */
+          
+         /* grid-area: 2/3/4/5; */
+/* all above get same result */
+
+         /* span way span across 3 rows*/
+         grid-area: 2/3/span 3/5;
+
+
+
+     }
   
     </style>
 </head>
 <body>
    <div id="container">
-       <div class="item">item 1</div>
+       <div class="item1">item 1</div>
        <div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed id optio, dolor necessitatibus doloremque ratione quam fuga cumque recusandae quasi enim, quaerat dicta reiciendis corrupti officiis iste, natus ex rem!</div>
        <div class="item">item 3</div>
        <div class="item">item 4</div>
        <div class="item">item 5</div>
        <div class="item">item 6</div>
        <div class="item">item 7</div>
-       
+       <div class="item">item 8</div>
+       <div class="item">item 9</div>
+       <div class="item">item 10</div>
+       <div class="item">item 11</div>
+       <div class="item">item 12</div>
        
        
         </div> 
