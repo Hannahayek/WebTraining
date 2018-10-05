@@ -55,6 +55,10 @@ grid-column: header;
 main{
     grid-row: content;
     grid-column: content;
+    display: grid;
+    grid-gap:5px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template: repeat(1fr);
 }
 
 sidebar {
@@ -79,31 +83,21 @@ header,main,aside,footer{
 <body>
    <div id="container">
       <header>Header</header>
-      <main>Content</main>
+      <main><div class="item">item 1</div>
+        <div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed id optio, dolor necessitatibus doloremque ratione quam fuga cumque recusandae quasi enim, quaerat dicta reiciendis corrupti officiis iste, natus ex rem!</div>
+        <div class="item">item 3</div>
+        <div class="item">item 4</div>
+        <div class="item">item 5</div>
+        <div class="item">item 6</div>
+        <div class="item">item 7</div>
+        <div class="item">item 8</div>
+        <div class="item">item 9</div>
+        <div class="item">item 10</div>
+        <div class="item">item 11</div>
+        <div class="item">item 12</div></main>
       <aside>Sidebar</aside>
     <footer>Footer</footer>
-    
-    
-    
-    
-    
-    
-    
-    
-    <!-- <div class="item1">item 1</div>
-       <div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed id optio, dolor necessitatibus doloremque ratione quam fuga cumque recusandae quasi enim, quaerat dicta reiciendis corrupti officiis iste, natus ex rem!</div>
-       <div class="item">item 3</div>
-       <div class="item">item 4</div>
-       <div class="item">item 5</div>
-       <div class="item">item 6</div>
-       <div class="item">item 7</div>
-       <div class="item">item 8</div>
-       <div class="item">item 9</div>
-       <div class="item">item 10</div>
-       <div class="item">item 11</div>
-       <div class="item">item 12</div> -->
-       
 
-        </div> 
+     </div> 
 </body>
 </html>
