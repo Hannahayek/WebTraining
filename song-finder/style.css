@@ -1,0 +1,27 @@
+img{
+    background: blue;
+    width:100px;
+    height:100px;
+  
+  }
+#songs{
+    display: grid;
+      background: lightgreen;
+   
+      grid-template-columns: 1fr 1fr 1fr;
+      /* grid-template-columns: header content footer */
+     
+      grid-gap: 10px 10px 10px;
+  
+  }
+
+  .item{
+ 
+    padding:30px; 
+    height: auto;
+  border:1px solid;
+  justify-self: center;
+  align-self: center;
+  }
+  
+  
