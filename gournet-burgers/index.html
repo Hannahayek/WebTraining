@@ -13,6 +13,32 @@
       </head>
       <body>
 <header>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<a class="navbar-brand" href="">Gourmet-Burgers</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarcollapse">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+  <a class="nav-link">
+    Home
+  </a>
+</li>
+<li class="nav-link">
+    <a class="nav-item">
+      Locations
+    </a>
+  </li>
+</ul>                            <!--   marging for meduim devices -->
+<form class="form-inline my-2 my-md-1">
+  <input class="form-control mr-sm-2" type="text" placeholder="Search">
+  <button class="btn btn-outline-success my-2" type="submit">Search</button>
+</form>
+</div>
+</nav>
+</header>
+
 <div id="carouselconrtols" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -42,40 +68,9 @@
     <span class="carousel-control-next-icon"></span>
     <span class="sr-only">Next</span>
     </a>
-  </div>
-
-
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-<a class="navbar-brand" href="">Gourmet-Burgers</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarcollapse">
-<ul class="navbar-nav mr-auto">
-<li class="nav-item">
-  <a class="nav-link">
-    Home
-  </a>
-</li>
-<li class="nav-link">
-    <a class="nav-item">
-      Locations
-    </a>
-  </li>
-</ul>
-<form>
-<input>
-<button type="submit">Search</button>
-
-
-</form>
-</div>
-</nav>
-</header>
-
-
-
-   <div class="container text-center">
+  </div> 
+                                 <!-- py padding y axis for photos  -->
+   <div class="container text-center py-5">
    <div class="row">
      <div class="col-md-4 ">
     <img  class="rounded-circle" src="images/open.jpg" alt="restaurants image">
@@ -161,9 +156,15 @@
     </div> 
 
   </div>
-
 </div>
-
+<footer class="container bg-light py-4">
+ <p class="float-right"><a href="#">Back to top</a></p>
+<p>
+  &copy;2018 Gourmet Burgers &middot;
+  <a href="">Home</a> &middot;
+  <a href="">Locations</a>
+</p>
+</footer>
 
 
 
