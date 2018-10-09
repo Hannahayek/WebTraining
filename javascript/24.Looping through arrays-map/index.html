@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Looping through arrays: map</title>
+</head>
+<body>
+
+  <div id="animals"></div>
+
+  <script>
+    
+    var animals = ['cat', 'dog', 'tiger', 'giraffe', 'lion'];
+    var upperCaseNames = [];
+
+    animals.forEach(function(animal, index) {
+      upperCaseNames.push(index+1 + ' - ' + animal.toUpperCase());
+    });   
+    
+    document.getElementById('animals').innerHTML = upperCaseNames;
+  
+    
+  </script>
+</body>
+</html>
