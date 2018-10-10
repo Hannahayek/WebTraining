@@ -11,20 +11,40 @@
 
   <script>
 var hungry=false;
-var craving="chinese";
+var craving="pizza";
 
-if(hungry){
-if(craving="pizza")
-  alert("get some food");
-  else
-  {
-    alert("we need food")
-  }
+// or = ||
+if(hungry&&craving==="pizza")
+{
+  alert("hungry and pizza")
 }
-  else
-  {
-alert("maybe later");
-  }
+
+
+else if(!hungry)
+{
+  alert("not hungry")
+}
+else
+{
+
+  alert("just hungry")
+}
+// if(hungry){
+// if(craving==="pizza")
+//   alert("give me pizza");
+//   else if(craving==="chinese")
+//   {
+//     alert("give me somve chines");
+//   }
+//   else
+//   {
+//     alert("we need food")
+//   }
+// }
+//   else
+//   {
+// alert("maybe later");
+//   }
 
 
   </script>
