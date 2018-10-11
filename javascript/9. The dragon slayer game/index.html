@@ -9,6 +9,29 @@
 <body>
 
   <script>
+    //math.ceil to rmeove the float numbers
+var random=Math.ceil(Math.random()*100);
+var name=prompt("What is your name");
+var play=confirm("hello "+name+ "Would you like to play ?");
+
+if(play){
+ var battle=confirm("Would you like to battle the dragon ?");
+//battle
+ if (battle)
+ {
+  var result= random >50 ?"you defeated the dragon ":"So bad ,you lost !";
+   alert(result);
+ }
+ //not battle
+ else{
+alert("come back when you are brave enough");
+
+ }
+
+}
+else{
+  alert("maybe later");
+}
 
 
   </script>
