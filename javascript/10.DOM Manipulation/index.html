@@ -7,10 +7,34 @@
   <title>DOM Manipulation</title>
 </head>
 <body>
-
-
+<p class="hello">Hello, <span id="userName">user</span></span></p>
+<p class="hello">Welcome back</span></p>
+<img id=image>
+<img id=image>
   <script>
+//getElementById
+var name="HAnna HAyek";
+   document.getElementById("userName").innerHTML=name;
+document.getElementById("userName").style.color="red";
+document.getElementById("userName").style.fontSize="25px";
 
+//get by class name /chosen by index
+var test=document.getElementsByClassName("hello")[0].style.color="purple";
+console.log(test);
+
+//get element by tag
+
+document.getElementsByTagName("p")[0].innerHTML="changed";
+
+
+//query selecter also can select image with(img) or class but with .image if class is image
+
+// document.querySelector("#image").setAttribute("src","image.jpg")
+
+//query selecter all ,notice there is 2 images in html
+
+document.querySelectorAll("#image")[0].setAttribute("src","image.jpg");
+document.querySelectorAll("#image")[1].setAttribute("src","image.jpg")
   </script>
   
 </body>
