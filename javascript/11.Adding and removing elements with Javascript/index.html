@@ -14,6 +14,34 @@
   </ul>
 
   <script>
+    //create element
+   var listItem= document.createElement("li");
+
+   //create text node
+   var itemText=document.createTextNode("Banana");
+
+   //add text to element
+
+   listItem.appendChild(itemText);
+
+   //select parent list
+
+   var list =document.getElementById("list");
+
+   list.appendChild(listItem);
+
+   //create grapes list item
+
+   var newListitem=document.createElement("li");
+   var newItemText=document.createTextNode("Grapes");
+   newListitem.appendChild(newItemText);
+//replece with item index 1
+   var itemtoreplace=document.querySelectorAll("li")[1];
+
+   list.replaceChild(newListitem,itemtoreplace);
+//remove item
+
+list.removeChild(newListitem);
 
   </script>
   
