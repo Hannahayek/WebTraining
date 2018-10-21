@@ -12,14 +12,12 @@
 
   <script>
 
-    var num1 = 5;
-    var num2 = 10;
 
-    var anonymousFunction = function() {
-      document.getElementById('text').innerHTML = num1 * num2;      
+    var anonymousFunction = num1 =>{
+      document.getElementById('text').innerHTML = num1 ;      
     }
 
-    anonymousFunction();
+    anonymousFunction(5);
 
   </script>
   
