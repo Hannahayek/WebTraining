@@ -8,15 +8,18 @@
 </head>
 <body>
 
-  <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde dolore at perspiciatis, id soluta veniam illum libero earum. Minima autem mollitia dolores, similique officia impedit magnam cum accusamus corrupti?</p>
+  <p id="text" onmouseover="changeFontSize()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores unde dolore at perspiciatis, id soluta veniam illum libero earum. Minima autem mollitia dolores, similique officia impedit magnam cum accusamus corrupti?</p>
 
   <script>
 
-    var changeFontSize = () => {
-      document.getElementById('text').style.fontSize = '34px';
-    }
 
-    changeFontSize();
+var changeFontSize = () => {
+  document.getElementById('text').style.fontSize = '34px';
+}
+
+var textElement=document.querySelector('p')
+textElement.addEventListener("click",changeFontSize);
+  
 
   </script>
   
