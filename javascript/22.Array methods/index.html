@@ -15,22 +15,27 @@
     var animals = ['cat', 'dog', 'tiger', 'giraffe', 'lion'];
         
     // Shift (removes first element from array)
-
+      //  var animal1=animals.shift();
+      //  console.log(animal1); //will be cat
 
     // Unshift (adds element(s) to beginning of array)
-
+       // animals.unshift('toto','divo')
 
     // Push (adds element(s) to end of array)
-
+      //  animals.push('divo');
 
     // Pop (removes last element from array)
-
+        // animals.pop();
 
     // Splice (Adds or removes elements at index number)
-
-
+          // animals.splice(2); //all items after number 2 will be deleted
+         // animals.splice(2,1); //remove one item after index 2
+          // animals.splice(2,1,'fish'); //replace index 2 with  item fish
+          // animals.splice(2,1,'fish','monkey'); //replace index 2 with 2 item fish monkey
     // Reverse
+animals.reverse();
 
+//more methods at google mozilla array methods
     document.getElementById('animals').innerHTML = animals;
   </script>
 </body>
