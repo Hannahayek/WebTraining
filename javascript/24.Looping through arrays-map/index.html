@@ -13,10 +13,10 @@
   <script>
     
     var animals = ['cat', 'dog', 'tiger', 'giraffe', 'lion'];
-    var upperCaseNames = [];
+   
 
-    animals.forEach(function(animal, index) {
-      upperCaseNames.push(index+1 + ' - ' + animal.toUpperCase());
+    var  upperCaseNames= animals.map( animal => {
+     return animal.toUpperCase();
     });   
     
     document.getElementById('animals').innerHTML = upperCaseNames;
