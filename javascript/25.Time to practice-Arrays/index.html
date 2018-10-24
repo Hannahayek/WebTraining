@@ -15,11 +15,20 @@
     // 1. Arrange elements into alphabetical order and store in a new variable
     // Hint - use array method .sort()
     var characters = ['Roger Rabbit', 'Jessica Rabbit', 'Daffy Duck', 'Bugs Bunny'];
+     
+     var sortedNames= characters.sort();
 
     // 2. Return new array with each element having 'Name' prefix 
     // Eg. Name: Bugs Bunny, Name: Daffy Duck
-
-    
+    // var newSortedNames=[];
+    //   sortedNames.forEach(name =>{
+    //     newSortedNames.push("Name: "+name);
+    //   });
+    // also can be done with below way with map
+  var newSortedNames=  sortedNames.map(name =>{
+return "Name :"+name;
+    });
+    document.getElementById('characters').innerHTML=newSortedNames;
   </script>
 </body>
 </html>
