@@ -17,12 +17,21 @@
     
     var characters = ['Roger Rabbit', 'Jessica Rabbit', 'Daffy Duck', 'Bugs Bunny'];
     var item = "";
-
-    for(var i = 0; i < characters.length; i++) {
+      var i=0;
+    while(i < characters.length) {
       item += '<li>' + characters[i] + '</li>';
+      i++;
     }
 
     document.getElementById("characters").innerHTML = item;
+    var x=5;
+    var y=10;
+
+    while(x<=y){
+
+      console.log(x);
+      x++;
+    }
     
   </script>
 </body>
