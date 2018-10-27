@@ -10,8 +10,19 @@
 
 
   <script>
+function Charcter (first,last,color,image){
+this.firstName=first;
+this.lastName=last;
+this.Color=color;
+this.Image=image;
+};
+  var mickey=new Charcter('Mickey','Mouse',['red','yellow','black'],'micky-mouse.png');
+  console.log(mickey);
+  console.log(mickey.Color[0]);
+  var duffy=new Charcter('Duffy','Duck',['black','orange'],'duffy-duck.png');
+  var duffy=new Charcter('Bugs','Bunny',['black','white'],'buggs-bunny.png');
+  console.log("duffy duck last name "+duffy.lastName);
 
-  
   </script>
 </body>
 </html>
