@@ -7,6 +7,7 @@
   <title>Looping through objects</title>
 </head>
 <body>
+  <div id="output"></div>
 
   <script>
      
@@ -16,6 +17,22 @@
       image: 'bugs-bunny.png',
       color: ['grey', 'white']
     };
+
+    var result="";
+
+    for(var i in character){
+     //i will get the fisrt name last names ,keys 
+     // character[i] will get values
+     
+     console.log(i);
+    
+     console.log(character[i]);
+     console.log("-----");
+
+       result +=i+": "+character[i]+"<br>";
+    }
+
+    document.getElementById("output").innerHTML=result;
     
   </script>
 </body>
