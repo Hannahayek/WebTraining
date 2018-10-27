@@ -9,11 +9,29 @@
 <body>
 
   <ul id="characters"></ul>
+  <img src="bugs-bunny.png">
+  <img src="daffy-duck.png">
 
   <script>
     
     var characters = ['Roger Rabbit', 'Jessica Rabbit', 'Daffy Duck', 'Bugs Bunny'];
-  
+    var item="";
+
+    // item +=characters[0]+"<br>";
+    // item +=characters[1]+"<br>";
+    // item +=characters[2]+"<br>";
+    // item +=characters[3]+"<br>";
+
+    for(var i=0;i<characters.length;i++){
+      item +="<li>"+characters[i]+ "</li>";
+    }
+
+    var images=document.querySelectorAll("img");
+    for(var i=0;i<images.length;i++){
+      console.log(images[i].getAttribute("src"));
+    }
+
+    document.getElementById("characters").innerHTML=item;
   </script>
 </body>
 </html>
