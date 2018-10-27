@@ -9,8 +9,31 @@
 <body>
 
   <script>
-     
-  
+    //  var character=new Object();
+    //   character.firstName="Bugs";
+    //  character.lastName="Bunny";
+    //  character.image="bugs-bunny.png";
+    //  character.color="grey";
+
+    //above can be done in below way
+
+
+    var character ={
+     firstName:"Bugs",
+     lastName:"Bunny",
+     image:"bugs-bunny.png",
+     color:["gray","white"],
+     fullName:function(){
+       alert("My Full Name is  "+this.firstName+this.lastName);
+     }
+        }
+     console.log(character);
+     console.log(character.fullName());
+
+     //access dot notation
+     console.log(character.color);
+  //brackets notation
+  console.log(character['color']);
   </script>
 </body>
 </html>
