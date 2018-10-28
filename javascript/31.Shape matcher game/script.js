@@ -25,6 +25,25 @@ const randomSelection=shapes[randomNum];
 return randomSelection;
 }
 
-selectRandomShape();
+
+const repeatShape=()=>{
+
+//this function will keep running so we put it inside function to be called
+setInterval(()=>{
+    shape1=selectRandomShape();
+    shape2=selectRandomShape
+    console.log(shape1);
+    console.log(shape2);
+    },1000);
+}
+
+//start game, click handler
+document.getElementById('play').onclick=()=>{
+
+    repeatShape();
+}
+
+
+
 
 
