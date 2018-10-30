@@ -27,7 +27,7 @@
       <input type="text" id="replace">
     </div>
 
-    <button id="replaceBtn">Replace!</button>
+    <button type="button" id="replaceBtn">Replace!</button>
   </form>
 
   <h3>Original text:</h3>
@@ -43,7 +43,18 @@
   <p></p>
   
   <script>
-       
+       document.getElementById('replaceBtn').addEventListener('click',()=>{
+         let originalText=document.querySelectorAll('p')[0];
+          let modifiedText=document.querySelectorAll('p')[1];
+
+         let findText=document.getElementById('find').value;  //value must be small charcther
+         let replaceText=document.getElementById('replace').value;
+//we use constructor findTextwithModifier because findText will not work  in newText
+         let findTextwithModifier=new RegExp(findText,'i');
+         let newText=originalText.innerHTML.replace(findTextwithModifier,replaceText);
+         modifiedText.innerHTML=newText;
+        
+       })
   
   </script>
 </body>
