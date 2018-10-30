@@ -17,32 +17,42 @@
 <body>
 
   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat eaque recusandae saepe quam, quo dolorem animi similique numquam labore natus, cum exercitationem hic unde facere repudiandae. Repellendus commodi qui officiis!
-  Deserunt, velit voluptatum veniam dicta libero impedit quas ullam itaque perferendis a ad omnis autem quos maxime hic cumque enim, tempora repellat! Error facere labore officiis fugiat excepturi eligendi eveniet.
-  Aliquam voluptatibus illum commodi minus at nam magnam laudantium corrupti sed eos doloribus modi quas nemo ea ut dolor incidunt porro consequuntur iste adipisci officiis voluptatum, repellat placeat? Quos, accusantium.
+  Deserunt, velit1 voluptatum veniam dicta libero impedit quas ullam itaque perferendis a ad omnis autem quos maxime hic cumque enim, tempora repellat! Error facere labore officiis fugiat excepturi eligendi eveniet.
+  Aliquam voluptatibus illum5 commodi minus at nam magnam laudantium corrupti sed eos doloribus modi quas nemo ea ut dolor incidunt porro consequuntur iste adipisci officiis voluptatum, repellat placeat? Quos, accusantium.
   Corporis ratione illo officiis sint est, recusandae rerum tempora fugit alias corrupti adipisci possimus asperiores aliquam libero mollitia, magnam modi ex? Eius consectetur earum facilis ex vero doloremque alias asperiores?
-  Nisi iusto animi numquam ipsum, aliquam ad fuga harum necessitatibus eius, ut possimus. Modi consectetur nisi magni in voluptates sint maxime, recusandae, illo dolores quo hic dignissimos. Ipsa, ratione id!
+  Nisi iusto animi numquam ipsum, aliquam ad amet fuga harum necessitatibus eius, ut possimus. Modi consectetur nisi magni in voluptates sint maxime, recusandae, illo dolores quo hic dignissimos. Ipsa, ratione id!
   Ullam repellat omnis nostrum eius adipisci dolorum aspernatur asperiores neque ad commodi, hic esse, cum cupiditate beatae quasi magni earum quis, unde voluptate sed! Eligendi labore quas ipsam nisi ullam.
-  Optio magni accusamus exercitationem voluptatem expedita, quis eum fugiat veritatis qui tenetur odit debitis.</p>
-  
+  Optio magni accusamus exercitationem voluptatem expedita, quis eum fugiat veritatis qui tenetur odit debitis4.</p>
+ 
   <script>
 
+     let text=document.querySelector('p').innerHTML;
     // returns the position of word in the string:
-
+        // let newText=text.search('amet');
+         
     // Replace text with a string (case sensitive)
+      //  let newText=text.replace('Lorem','hanna');
 
     // Replace text with a regular expression, i modifier to perform case insensitive match
+    // let newText=text.replace(/lorem/i,'hanna');
 
     // i modifier = replaces first match only
+    // let newText=text.replace(/e/i,'F');
 
     // g modifier = replaces all matches
-
+    // let newText=text.replace(/e/g,'F');
 
     // Use square brackets to find any letter inside (first one only counts)
+    // let newText=text.replace(/[hgs]/,'***replaced***');
 
     // Add g modifier to select all from letters inside of sq brackets
+    // let newText=text.replace(/[hgs]/g,'***replaced***');
 
     // Use square brackets to find any number inside (first one only counts)
-    
+    let newText=text.replace(/[3-6]/g,'***replaced***');
+//google mozilla regulater experissions for more
+
+    console.log(newText);
     
   </script>
 </body>
