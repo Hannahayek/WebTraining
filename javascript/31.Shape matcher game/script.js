@@ -31,9 +31,24 @@ const repeatShape=()=>{
 //this function will keep running so we put it inside function to be called
 setInterval(()=>{
     shape1=selectRandomShape();
-    shape2=selectRandomShape
-    console.log(shape1);
-    console.log(shape2);
+    shape2=selectRandomShape();
+   
+    const shape1Style=`width:${shape1.width+"px"};
+                     background:${shape1.color};
+                     height:${shape1.height+"px"}; 
+                     `  //note there is ` here 
+
+
+const shape2Style2=`width:${shape2.width+"px"};
+                     background:${shape2.color};
+                     height:${shape2.height+"px"}; 
+                     `//note there is ` here 
+
+
+                     document.getElementById('shape1').style.cssText=shape1Style;
+                     document.getElementById('shape2').style.cssText=shape2Style2;
+
+
     },1000);
 }
 
