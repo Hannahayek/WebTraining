@@ -4,7 +4,7 @@ let currentValue=0;
 let playing=false;
 let shape1;
 let shape2;
-
+const matchBtn=document.getElementById('match');
 const shapes=[
 {color:'#FF59FE',width:'250',height:'160'},
 {color:'#FF59FE',width:'270',height:'150'},
@@ -32,6 +32,7 @@ const repeatShape=()=>{
 setInterval(()=>{
     shape1=selectRandomShape();
     shape2=selectRandomShape();
+    matchBtn.disabled=false;
    
     const shape1Style=`width:${shape1.width+"px"};
                      background:${shape1.color};
@@ -47,18 +48,32 @@ const shape2Style2=`width:${shape2.width+"px"};
 
                      document.getElementById('shape1').style.cssText=shape1Style;
                      document.getElementById('shape2').style.cssText=shape2Style2;
-
-
     },1000);
 }
 
 //start game, click handler
 document.getElementById('play').onclick=()=>{
+playing=true;
+//diable the play button when playing
+    document.getElementById('play').disabled=true;
 
     repeatShape();
 }
+//compare
+document.getElementById('match').onclick=() =>{
+if(playing){
+    matchBtn.disabled=true; //we disable the button after click , and enabled after new shapre generated
+if(Object.is(shape1,shape2)){//new feature in java scrip to compare objects
+currentValue++;
+document.getElementById('score').innerHTML=currentValue;
+}
+else{
+    currentValue--;
+    document.getElementById('score').innerHTML=currentValue;
+}
+}
 
-
+}
 
 
 
