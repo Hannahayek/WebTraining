@@ -17,20 +17,17 @@ main{
   }
 
 
-  .item{
+  article{
  
-    padding:30px; 
-    height: auto;
-  border:1px solid;
-  justify-self: center;
-  align-self: center;
+    margin: 5px;
+    padding: 5px;
+    /* display: inline-block; */
+   text-align: center;
   }
 
 
   
   img{
-    background: blue;
-    width:100px;
-    height:100px;
-  
-  }
+
+    max-width: 100%;
+      }
