@@ -1,19 +1,21 @@
-img{
-    background: blue;
-    width:100px;
-    height:100px;
-  
-  }
-#songs{
-    display: grid;
-      background: lightgreen;
+
+main{
+  display: grid;
+    background: lightgreen;
+ 
+    grid-template-columns: repeat(3,1fr);
+    /* grid-template-columns: header content footer */
    
-      grid-template-columns: 1fr 1fr 1fr;
-      /* grid-template-columns: header content footer */
-     
-      grid-gap: 10px 10px 10px;
-  
+    grid-gap: 10px;
+
+}
+
+ body {
+  background: lightgreen;
+  text-align: center;
+
   }
+
 
   .item{
  
@@ -23,5 +25,12 @@ img{
   justify-self: center;
   align-self: center;
   }
+
+
   
+  img{
+    background: blue;
+    width:100px;
+    height:100px;
   
+  }
