@@ -54,8 +54,21 @@ const updateTerm=()=>{
 
 
 
-
+//will trigger search
 const searchButtom=document.querySelector('button')
 searchButtom.addEventListener('click',updateTerm)
 
+
+//this will pause player if other one clicked 
+document.addEventListener('play',event =>{
+const audio=document.getElementsByTagName('audio');
+for(var i=0;i<audio.length;i++){
+if(audio[i]!=event.target){
+    audio[i].pause();
+}
+
+}
+
+
+},true)//by default it is set to false, so will not bubble
 
