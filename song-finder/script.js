@@ -1,4 +1,5 @@
 let term='';
+const songCotainer=document.getElementById('songs');
 const updateTerm=()=>{
     term=document.getElementById('searchInput').value;
 
@@ -7,18 +8,19 @@ const updateTerm=()=>{
         alert("please input search term")
     }
     else{
+            //to clean if has songs from previous search
+           while(songCotainer.firstChild){
+              songCotainer.removeChild(songCotainer.firstChild);
+           }
 
-           
-
-        const url="https://itunes.apple.com/search?term="+term;
+        const url="https://itunes.apple.com/search?limit=10&media=music&term="+term;
         fetch(url)
         .then((response)=>response.json()) //we pass the data to Json. then to data
         .then((data)=>{
         
            const artists=data.results;      //results from the api
         return artists.map(result =>{
-           const songCotainer=document.getElementById('songs'),
-                  article=document.createElement('article'),  //all are constants we can seperate by ,
+         const   article=document.createElement('article'),  //all are constants we can seperate by ,
                   artist=document.createElement('p'),
                   song=document.createElement('p'),
                   img=document.createElement('img'),
