@@ -1,9 +1,9 @@
-{
+cd{
   "name": "lets-travel",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    m
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
