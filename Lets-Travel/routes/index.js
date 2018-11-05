@@ -1,20 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
+/* require controller */
+const hotelController=require("../controllers/hotelController")
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', hotelController.homePage);
 
 /* GET all hotels page. */
-router.get('/all',function(req,res){
-  res.render('all_hotels', { title: 'All Hotels' });
-});
+router.get('/all',hotelController.listAllHotels);
 
-/* GET all hotels and pass parameter */
-router.get('/all/:name',function(req,res){
-  const name =req.params.name;
-  res.render('all_hotels', { title: 'All Hotels',name });
-});
+// /* GET all hotels and pass parameter */
+// router.get('/all/:name',function(req,res){
+//   const name =req.params.name;
+//   res.render('all_hotels', { title: 'All Hotels',name });
+// });
 
 module.exports = router;
