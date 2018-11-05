@@ -11,4 +11,10 @@ router.get('/all',function(req,res){
   res.render('all_hotels', { title: 'All Hotels' });
 });
 
+/* GET all hotels and pass parameter */
+router.get('/all/:name',function(req,res){
+  const name =req.params.name;
+  res.render('all_hotels', { title: 'All Hotels',name });
+});
+
 module.exports = router;
