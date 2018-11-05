@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* GET all hotels page. */
+router.get('/all',function(req,res){
+  res.render('all_hotels', { title: 'All Hotels' });
+});
+
 module.exports = router;
