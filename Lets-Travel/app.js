@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose=require('mongoose');
 
 var indexRouter = require('./routes/index');
 
@@ -11,6 +12,12 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+//setup mongoose connection
+mongoose.connect('mongodb://lets-travel:travel1@ds151863.mlab.com:51863/lets-travel', { useNewUrlParser: true });
+mongoose.Promise=global.Promise;
+//setup for error for moongose
+mongoose.connection.on('error',(error)=> console.error(error.message));
 
 app.use(logger('dev'));
 app.use(express.json());
