@@ -15,4 +15,8 @@ router.get('/all',hotelController.listAllHotels);
 //   res.render('all_hotels', { title: 'All Hotels',name });
 // });
 
+/* admin route */
+router.get('/admin',hotelController.adminPage);
+router.get('/admin/add',hotelController.createHotelGet);
+
 module.exports = router;
