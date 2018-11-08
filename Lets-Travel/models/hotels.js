@@ -1,7 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose=require('mongoose')
 
-const hotelSchema=new moongose.Schema({
-hote_name: {
+
+const hotelSchema=new mongoose.Schema({
+hotel_name: {
 type:String,
 required:'Hotel Name is required',
 max:32,

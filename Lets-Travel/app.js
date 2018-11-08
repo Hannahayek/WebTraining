@@ -14,7 +14,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 //setup mongoose connection
-mongoose.connect('mongodb://lets-travel:travel1@ds151863.mlab.com:51863/lets-travel', { useNewUrlParser: true });
+mongoose.connect('mongodb://hannauser:travel123@ds151863.mlab.com:51863/lets-travel');
 mongoose.Promise=global.Promise;
 //setup for error for moongose
 mongoose.connection.on('error',(error)=> console.error(error.message));
