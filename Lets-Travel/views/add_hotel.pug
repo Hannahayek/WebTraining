@@ -15,16 +15,16 @@ block content
          textarea(type="text" name="hotel_description" id="hotel_description" cols="30" rows="10" required)
      .form_input 
          label(for="image") Hotel image 
-         textarea(type="file" name="image" id="image" )
+         input(type="file" name="image" id="image" )
      .form_input 
          label(for="star_rating") Star Rating
-         textarea(type="number" name="star_rating" min="1" max="5" required )  
+         input(type="number" name="star_rating" min="1" max="5" required )  
      .form_input 
          label(for="country") Country
          textarea(type="text" name="country" id="country" required ) 
      .form_input 
-         label(for="cost_per_night") Country
-         textarea(type="number" name="cost_per_night" id="cost_per_night" required )   
+         label(for="cost_per_night") Cost Per Night
+         input(type="number" name="cost_per_night" id="cost_per_night" required )   
      .form_input
          label(for="available") Available
          input(type="radio" id="available" name="available" value="true" checked)
