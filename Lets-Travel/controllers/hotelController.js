@@ -15,6 +15,18 @@ exports.listAllHotels= async (req,res,next)=>{
 
 };
 
+exports.listAllCountries= async (req,res,next)=>{
+    try {
+        const allCountries=await Hotel.distinct('country');
+        res.render('all_countries',{title:'Browse by country',allCountries});
+    } catch (error) {
+     next(error)   
+    }
+
+};
+
+
+
 //admin controllers
 
 exports.adminPage=(req,res)=>{
@@ -39,3 +51,6 @@ exports.createHotelPost= async(req,res,next)=>{
     }
    
     }
+
+
+    

@@ -8,6 +8,7 @@ router.get('/', hotelController.homePage);
 
 /* GET all hotels page. */
 router.get('/all',hotelController.listAllHotels);
+router.get('/countries',hotelController.listAllCountries);
 
 // /* GET all hotels and pass parameter */
 // router.get('/all/:name',function(req,res){
