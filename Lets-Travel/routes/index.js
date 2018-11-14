@@ -4,7 +4,7 @@ var router = express.Router();
 /* require controller */
 const hotelController=require("../controllers/hotelController")
 /* GET home page. */
-router.get('/', hotelController.homePage);
+router.get('/', hotelController.homePageFilters);
 
 /* GET all hotels page. */
 router.get('/all',hotelController.listAllHotels);

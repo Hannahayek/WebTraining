@@ -1,8 +1,9 @@
 const Hotel=require("../models/hotels")
-exports.homePage =(req,res) =>{''
-    res.render('index', { title: 'Lets Travel' });
 
-};
+// exports.homePage =(req,res) =>{''
+//     res.render('index', { title: 'Lets Travel' });
+
+// };
 
 exports.listAllHotels= async (req,res,next)=>{
     try {
@@ -25,7 +26,25 @@ exports.listAllCountries= async (req,res,next)=>{
 
 };
 
+exports.homePageFilters=async(req,res,next)=>{
+try {
+    const hotels=await Hotel.aggregate([   //we made array here , values passed to array
+        {$match: {available:true}},
+        {$sample:{size:9}}
+  
+]);
+    
+const countries = await Hotel.aggregate([
+    {$group:{_id:'$country'}},
+    {$sample:{size:9}}
+]);
+res.render('index',{hotels,countries});
+} catch (error) {
+    next(error)
+}
 
+
+}
 
 //admin controllers
 
