@@ -72,4 +72,32 @@ exports.createHotelPost= async(req,res,next)=>{
     }
 
 
-    
+ exports.editRemoveGet=(req,res)=>{
+    res.render('edit_remove',{title: 'search for add or update new hotel'});
+ }   
+
+ exports.editRemovePost=async (req,res,next)=>{
+   try {
+       const hotelId=req.body.hotel_id || null;
+       const hotelName=req.body.hotel_name || null;
+//save search or in array
+       const hotelData=await Hotel.find({$or:[
+           {_id:hotelId},
+           {hotel_name:hotelName}
+           //collation language search found in documents
+       ]}).collation({
+         locale:'en',
+         strength:2
+       });
+
+         if(hotelData.length>0){
+           res.render('hotel_detail',{title:'Add /Remove Hotel',hotelData})
+             return
+         }else{
+             res.redirect('/admin/edit-remove')
+         }
+
+    } catch (error) {
+       next(error) 
+    }
+ }   
