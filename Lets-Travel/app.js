@@ -13,6 +13,13 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+
+//function will run with every request,and we can access url variable in every template
+app.use((req,res,next)=>{
+res.locals.url=req.path
+next(); //or without next will freeze
+});
+
 //setup mongoose connection
 mongoose.connect('mongodb://hannauser:travel123@ds151863.mlab.com:51863/lets-travel');
 mongoose.Promise=global.Promise;
