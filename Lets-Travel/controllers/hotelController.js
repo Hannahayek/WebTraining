@@ -72,6 +72,7 @@ exports.createHotelPost= async(req,res,next)=>{
     }
 
 
+
  exports.editRemoveGet=(req,res)=>{
     res.render('edit_remove',{title: 'search for add or update new hotel'});
  }   
@@ -101,3 +102,34 @@ exports.createHotelPost= async(req,res,next)=>{
        next(error) 
     }
  }   
+
+
+ exports.updateHotelGet=async(req,res,next)=>{
+try { // _id:req.params.hotelId comes from the name in the route for this functuin in index page
+    const hotel=await Hotel.findOne({_id:req.params.hotelId});
+   
+     res.render('add_hotel',{title:'Update Hotel',hotel})
+    
+    
+} catch (error) {
+    next(error)
+}
+
+ }
+
+
+ exports.updateHotelPost=async(req,res,next)=>{
+    try { // _id:req.params.hotelId comes from the name in the route for this functuin in index page
+        //new:true it will get back the modified record, if not set, will return the original record
+        const hotelId=req.params.hotelId;
+       const hotel=await Hotel.findByIdAndUpdate(hotelId,req.body,{new:true});
+       //we write below code, so not to hang the browser
+       res.redirect('/all/'+hotelId)
+       
+        
+        
+    } catch (error) {
+        next(error)
+    }
+    
+     }

@@ -22,5 +22,7 @@ router.get('/admin/add',hotelController.createHotelGet);
 router.post('/admin/add',hotelController.createHotelPost);
 router.get('/admin/edit-remove',hotelController.editRemoveGet);
 router.post('/admin/edit-remove',hotelController.editRemovePost);
+router.get('/admin/:hotelId/update',hotelController.updateHotelGet);
+router.post('/admin/:hotelId/update',hotelController.updateHotelPost);
 
 module.exports = router;
