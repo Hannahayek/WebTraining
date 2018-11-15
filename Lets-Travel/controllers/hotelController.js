@@ -106,6 +106,7 @@ exports.createHotelPost= async(req,res,next)=>{
 
  exports.updateHotelGet=async(req,res,next)=>{
 try { // _id:req.params.hotelId comes from the name in the route for this functuin in index page
+    //_id from database match with hotelId
     const hotel=await Hotel.findOne({_id:req.params.hotelId});
    
      res.render('add_hotel',{title:'Update Hotel',hotel})
@@ -133,3 +134,27 @@ try { // _id:req.params.hotelId comes from the name in the route for this functu
     }
     
      }
+
+
+     exports.deleteHotelGet=async(req,res,next)=>{
+        try { 
+            const hotelId=req.params.hotelId;
+           const hotel=await Hotel.findOne({_id:hotelId});
+           res.render('add_hotel',{title:'Delete Hotel',hotel});
+        } catch (error) {
+            next(error)
+        }
+        
+         }
+
+
+         exports.deleteHotelPost=async(req,res,next)=>{
+            try { 
+                const hotelId=req.params.hotelId;
+               const hotel=await Hotel.findByIdAndRemove({_id:hotelId});
+               res.redirect('/')
+            } catch (error) {
+                next(error)
+            }
+            
+             }
