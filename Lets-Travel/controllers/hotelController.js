@@ -159,9 +159,7 @@ try { // _id:req.params.hotelId comes from the name in the route for this functu
             
              }
 
-
-
-             exports.hotelDetail=async(req,res,next)=>{
+ exports.hotelDetail=async(req,res,next)=>{
                 try { 
                     const hotelParam=req.params.hotel;
                    const hotelData=await Hotel.find({_id:hotelParam});
@@ -171,3 +169,13 @@ try { // _id:req.params.hotelId comes from the name in the route for this functu
                 }
                 
                  }
+
+ exports.hotelsByCountry=async(req,res,next)=>{
+     try {
+         const countryParam=req.params.country;
+         const countryList=await Hotel.find({country:countryParam});
+         res.render('hotels_by_country',{title: 'Browse by Country:'+countryParam,countryList});
+     } catch (error) {
+         next(error)
+     }
+ }              
