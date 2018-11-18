@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -21,7 +22,7 @@ next(); //or without next will freeze
 });
 
 //setup mongoose connection
-mongoose.connect('mongodb://hannauser:travel123@ds151863.mlab.com:51863/lets-travel');
+mongoose.connect(process.env.DB);
 mongoose.Promise=global.Promise;
 //setup for error for moongose
 mongoose.connection.on('error',(error)=> console.error(error.message));
