@@ -28,17 +28,18 @@ exports.listAllCountries= async (req,res,next)=>{
 
 exports.homePageFilters=async(req,res,next)=>{
 try {
-    const hotels=await Hotel.aggregate([   //we made array here , values passed to array
+    const hotels= Hotel.aggregate([   //we made array here , values passed to array
         {$match: {available:true}},
         {$sample:{size:9}}
   
 ]);
     
-const countries = await Hotel.aggregate([
+const countries =  Hotel.aggregate([
     {$group:{_id:'$country'}},
     {$sample:{size:9}}
 ]);
-res.render('index',{hotels,countries});
+const[filteredCountries,filteredHotels]= await Promise.all([countries,hotels]);
+res.render('index',{filteredHotels,filteredCountries});
 } catch (error) {
     next(error)
 }
