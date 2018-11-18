@@ -165,7 +165,7 @@ margin:0.5em;
 
  
 
-  .hotel {
+  .hotel_wrapper  .hotel {
     display: flex;
   }
   .hotel_img {

@@ -1,20 +1,20 @@
 extends layout
 include mixins\_hotel
+include mixins/_country_list
 
 block content
   .outer_wrapper
-    h2 Hotels 
-     a(href="/all") (see all):
-    ul
-      each hotel in hotels
-       +hotel(hotel)
+    .hotel_wrapper  
+      h2 Hotels 
+       a(href="/all") (see all):
+      ul
+       each hotel in hotels
+        +hotel(hotel)
   .country_wrapper   
     h2 Countries 
      a(href="/countries") (see all):
     ul
        each country in countries 
-         li  
-           a(href='/countries/'+country._id) #{country._id}
-           img(src='/images/countries/'+country._id+'.jpg')
+        +countryList(country._id)
            
 //- we set the unique id for country in aggregation function
