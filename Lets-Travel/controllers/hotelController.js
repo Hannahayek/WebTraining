@@ -8,9 +8,36 @@ cloudindary.config({
    api_secret:process.env.CLOUDINARY_API_SECRET
 });
 
-const storage=multer.discStorage({});
+const storage=multer.diskStorage({});
 const upload=multer({storage});
 exports.upload=upload.single('image');
+
+exports.pushToCloudinary=(req,res,next)=>{
+    try {
+        if(req.file){
+           cloudindary.uploader.upload(req.file.path)
+           .then((result)=>{
+               req.body.image=result.public_id;
+               next(); //here will move to createhotelPost
+               //next to move to next function when first one finished
+               // router.post('/admin/add',hotelController.upload
+                 //,hotelController.pushToCloudinary
+                  //,hotelController.createHotelPost);
+             
+
+           })
+           .catch(()=>{
+               res.redirect('/admin/add');
+           })
+        }else{
+            next();
+        }
+        
+
+    } catch (error) {
+        next(error)
+    }
+}
 
 
 // exports.homePage =(req,res) =>{''
