@@ -1,4 +1,17 @@
-const Hotel=require("../models/hotels")
+const Hotel=require("../models/hotels");
+const cloudindary=require("cloudinary");
+const multer=require("multer");
+
+cloudindary.config({
+   cloud_name:process.env.CLOUDINARY_NAME,
+   api_key:process.env.CLOUDINARY_API_KEY,
+   api_secret:process.env.CLOUDINARY_API_SECRET
+});
+
+const storage=multer.discStorage({});
+const upload=multer({storage});
+exports.upload=upload.single('image');
+
 
 // exports.homePage =(req,res) =>{''
 //     res.render('index', { title: 'Lets Travel' });
