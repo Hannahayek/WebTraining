@@ -226,10 +226,11 @@ try { // _id:req.params.hotelId comes from the name in the route for this functu
      try {
         //  search using \ will bring exact word we can look at mongodb document
         //gte means greater
+        //|| 1 if no values revieved use value 1
          const searchQuery=req.body;
          //convert starts from string to int
-         const pasrsedStrars=parseInt(searchQuery.stars); 
-         const parsedSorts=parseInt(searchQuery.sort);
+         const pasrsedStrars=parseInt(searchQuery.stars) || 1; 
+         const parsedSorts=parseInt(searchQuery.sort) || 1;
          const searchData=await Hotel.aggregate([
              {$match:{$text:{$search:"\""+ searchQuery.destination+"\"" } } },
              {$match:{available:true,star_rating:{$gte:pasrsedStrars}}},
