@@ -17,5 +17,11 @@ mixin hotel(hotel,searchQuery)
    
    if url==="/results"
     .hotel_order_details
-     p='Number of Nights ' +searchQuery.duration
-     p='Departure Data '  +searchQuery.dateOfDeparture
+       p='Number of Nights ' +searchQuery.duration
+       p='Departure Data '  +searchQuery.dateOfDeparture
+       - const costEach = searchQuery.duration * hotel.cost_per_night
+       - const totalCost = costEach * searchQuery.numberOfGuests
+       
+       p='Total for Person $ '+ costEach
+       hr
+       p='Total Cost: $'+ totalCost

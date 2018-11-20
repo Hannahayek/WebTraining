@@ -103,6 +103,7 @@ margin: 0 0 1em 0;
 
 .hotel_info{
 padding: 1em;
+text-align: center;
 
 }
 
@@ -130,7 +131,13 @@ textarea{
 .button_small{
 width:100px;
 margin:0.5em;
+padding:1em;
+}
 
+.hotel_order_details{
+  background: #eed;
+  text-align: center;
+  padding:1em;
 }
 
 @media(min-width:1000px){
@@ -177,6 +184,7 @@ margin:0.5em;
   .hotel_info {
 flex:1;
 padding:0 1em;
+text-align: left;
 
   }
 
@@ -185,6 +193,10 @@ padding:0 1em;
   grid-template-columns: repeat(3,1fr);
   grid-gap: 20px;
  text-align: center;
+}
+.hotel_order_details{
+ 
+  text-align: left;
 }
 
 
