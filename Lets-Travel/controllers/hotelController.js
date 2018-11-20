@@ -219,4 +219,20 @@ try { // _id:req.params.hotelId comes from the name in the route for this functu
      } catch (error) {
          next(error)
      }
- }              
+ }     
+ 
+ 
+ exports.searchResults=async(req,res,next)=>{
+     try {
+        //  search using \ will bring exact word we can look at mongodb document
+         const searchQuery=req.body;
+         const searchData=await Hotel.aggregate([
+             {$match:{$text:{$search:"\""+ searchQuery.destination+"\"" } } },
+             {$match:{available:true}}
+
+         ])
+        res.json(searchData);
+     } catch (error) {
+         next(error)
+     }
+ }

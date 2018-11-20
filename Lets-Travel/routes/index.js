@@ -11,6 +11,7 @@ router.get('/all',hotelController.listAllHotels);
 router.get('/all/:hotel',hotelController.hotelDetail);
 router.get('/countries',hotelController.listAllCountries);
 router.get('/countries/:country',hotelController.hotelsByCountry);
+router.post('/results',hotelController.searchResults);
 
 
 // /* GET all hotels and pass parameter */

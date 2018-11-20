@@ -36,8 +36,11 @@ available:{
 }
 
 });
-
-
+//we add this index for search, also we be added in mlab database
+hotelSchema.index({
+    hotel_name:'text',
+    country:'text'
+})
 
 //export model
 
