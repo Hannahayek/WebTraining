@@ -236,7 +236,8 @@ try { // _id:req.params.hotelId comes from the name in the route for this functu
              {$sort:{cost_per_night:parsedSorts}}
 
          ])
-        res.json(searchData);
+        // res.json(searchData);
+        res.render('search_results',{title:'Search Resules',searchQuery,searchData});
      } catch (error) {
          next(error)
      }

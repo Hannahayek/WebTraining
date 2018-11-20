@@ -1,4 +1,4 @@
-mixin hotel(hotel)
+mixin hotel(hotel,searchQuery)
  .hotel
    .hotel_img
       a(href='/all/'+hotel_id)
@@ -14,3 +14,8 @@ mixin hotel(hotel)
       p='star rating:'+hotel.star_rating
       p='Country:'+hotel.country
       p='cost per night $'+hotel.cost_per_night
+   
+   if url==="/results"
+    .hotel_order_details
+     p='Number of Nights ' +searchQuery.duration
+     p='Departure Data '  +searchQuery.dateOfDeparture
