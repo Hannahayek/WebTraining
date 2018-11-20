@@ -225,10 +225,15 @@ try { // _id:req.params.hotelId comes from the name in the route for this functu
  exports.searchResults=async(req,res,next)=>{
      try {
         //  search using \ will bring exact word we can look at mongodb document
+        //gte means greater
          const searchQuery=req.body;
+         //convert starts from string to int
+         const pasrsedStrars=parseInt(searchQuery.stars); 
+         const parsedSorts=parseInt(searchQuery.sort);
          const searchData=await Hotel.aggregate([
              {$match:{$text:{$search:"\""+ searchQuery.destination+"\"" } } },
-             {$match:{available:true}}
+             {$match:{available:true,star_rating:{$gte:pasrsedStrars}}},
+             {$sort:{cost_per_night:parsedSorts}}
 
          ])
         res.json(searchData);
