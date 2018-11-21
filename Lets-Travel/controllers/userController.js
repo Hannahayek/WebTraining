@@ -29,12 +29,15 @@ check('confirm_password')
 .custom((value,{req})=> value === req.body.password)
 .withMessage('Passwords do not match'),
 
+//will clean any code from the data
+sanitize('*').trim().escape(),
+
 (req, res,next) => {
 const errors=validationResult(req);
 
 if(!errors.isEmpty()){
 //there are errors
-res.render('sign_up',{title:'Please fix the following errors:'})
+res.render('sign_up',{title:'Please fix the following errors:',errors:errors.array()})
 
 }else{
     //no errors
