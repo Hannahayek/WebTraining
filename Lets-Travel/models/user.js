@@ -1,4 +1,4 @@
-const mongooge=require('mongoose');
+const mongoose=require('mongoose')
 
 
 const userSchema=new mongoose.Schema({
@@ -36,4 +36,4 @@ isAdmin:{
 
 });
 
-module.exports=mongooge.model('User',userSchema);
+module.exports=mongoose.model('User',userSchema);
