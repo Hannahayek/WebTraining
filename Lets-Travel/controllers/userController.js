@@ -5,6 +5,7 @@ const { sanitize } =require('express-validator/filter');
 
 exports.signUpGet=(req,res)=>{
     res.render('sign_up',{title:'User sign up'});
+   
 }
 
 exports.signUpPost= [
@@ -38,9 +39,17 @@ const errors=validationResult(req);
 if(!errors.isEmpty()){
 //there are errors
 res.render('sign_up',{title:'Please fix the following errors:',errors:errors.array()})
-
+return;
 }else{
     //no errors
+    const newUser=new User(req.body);
+    User.register(newUser,req.body.password,function(err){
+       if(err){
+           console.log("error while registering! ",err);
+           return next(err);
+       }
+
+    });
 }
 }
 
