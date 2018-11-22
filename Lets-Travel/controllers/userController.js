@@ -74,9 +74,10 @@ exports.loginPost=Passport.authenticate('local',{
 });
 
 //logout
-exports.logout=(req,rest)=>{
+exports.logout=(req,res)=>{
     //method provided by passport
     req.logout();
+    req.flash('info','you are now logged out');
     res.redirect('/');
 
 }

@@ -13,7 +13,7 @@ const upload=multer({storage});
 exports.upload=upload.single('image');
 
 exports.pushToCloudinary=(req,res,next)=>{
-    try {
+    
         if(req.file){
            cloudindary.uploader.upload(req.file.path)
            .then((result)=>{
@@ -27,17 +27,15 @@ exports.pushToCloudinary=(req,res,next)=>{
 
            })
            .catch(()=>{
-               res.redirect('/admin/add');
+               req.flash('error','Sorry there was a problem uploading your image,please try again')
+              /// res.redirect('/admin/add');
            })
         }else{
             next();
         }
-        
-
-    } catch (error) {
-        next(error)
+    
     }
-}
+
 
 
 // exports.homePage =(req,res) =>{''
@@ -105,6 +103,7 @@ exports.createHotelPost= async(req,res,next)=>{
     try{
         const hotel=new Hotel(req.body);
         await hotel.save();
+        req.flash('success',hotel.hotel_name+" created successfully");
         res.redirect('/all/'+hotel._id);
     }catch(error){
        next(error);
@@ -136,6 +135,7 @@ exports.createHotelPost= async(req,res,next)=>{
            res.render('hotel_detail',{title:'Add /Remove Hotel',hotelData})
              return
          }else{
+             req.flash('info','no hotels were found')
              res.redirect('/admin/edit-remove')
          }
 
@@ -149,7 +149,7 @@ exports.createHotelPost= async(req,res,next)=>{
 try { // _id:req.params.hotelId comes from the name in the route for this functuin in index page
     //_id from database match with hotelId
     const hotel=await Hotel.findOne({_id:req.params.hotelId});
-   
+     
      res.render('add_hotel',{title:'Update Hotel',hotel})
     
     
@@ -165,6 +165,7 @@ try { // _id:req.params.hotelId comes from the name in the route for this functu
         //new:true it will get back the modified record, if not set, will return the original record
         const hotelId=req.params.hotelId;
        const hotel=await Hotel.findByIdAndUpdate(hotelId,req.body,{new:true});
+       req.flash('success',hotel.hotel_name+" updated successfully");
        //we write below code, so not to hang the browser
        res.redirect('/all/'+hotelId)
        
@@ -193,6 +194,7 @@ try { // _id:req.params.hotelId comes from the name in the route for this functu
             try { 
                 const hotelId=req.params.hotelId;
                const hotel=await Hotel.findByIdAndRemove({_id:hotelId});
+               req.flash('info',hotel.hotel_name+" Hotel ID:"+hotelId+ " has been deleted");
                res.redirect('/')
             } catch (error) {
                 next(error)
