@@ -1,6 +1,8 @@
 const mongoose=require('mongoose');
 //npm i passport passport-local passport-local-mongoose
 const passportLocalMongoose=require('passport-local-mongoose');
+//npm i mongoose-bcrypt 
+const mongooseBcyrpt=require('mongoose-bcrypt');
 
 const userSchema=new mongoose.Schema({
 first_name:{
@@ -25,7 +27,8 @@ email:{
 },
 password:{
     type:String,
-    required:'Password is required'
+    required:'Password is required',
+    bcrypt:true
 
 },
 isAdmin:{
@@ -36,6 +39,8 @@ isAdmin:{
 
 
 });
+//bcrypt
+userSchema.plugin(mongooseBcyrpt);
 //we add usernameField because by default it will look for username in our scheme
 userSchema.plugin(passportLocalMongoose,{usernameField:'email'});
 
