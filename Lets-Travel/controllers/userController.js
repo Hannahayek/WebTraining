@@ -67,7 +67,9 @@ exports.loginGet=(req,res)=>{
 //user login
 exports.loginPost=Passport.authenticate('local',{
     successRedirect:'/',
-    failureRedirect:'/login'
+    successFlash:'You are now logged in',
+    failureRedirect:'/login',
+    failureFlash:'Login failed,please try again'
 
 });
 

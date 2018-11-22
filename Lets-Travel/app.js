@@ -14,6 +14,12 @@ const session=require('express-session');
 //npm i connect-mongo
 const MongoStore=require('connect-mongo')(session);
 
+
+// npm i connect-flash 
+//for flash messages
+const flash=require('connect-flash');
+
+
 // For passport.js
 const User=require('./models/user');
 const passport=require('passport');
@@ -42,10 +48,14 @@ passport.use(User.createStrategy());
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+//Flash messages
+app.use(flash());
  
 //function will run with every request,and we can access url variable in every template
 app.use((req,res,next)=>{
 res.locals.url=req.path
+res.locals.flash=req.flash(), //this will make flash available in all templates
 next(); //or without next will freeze
 });
 

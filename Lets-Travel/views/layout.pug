@@ -43,5 +43,11 @@ html
                      option(value="-1") Price:Hight - Low 
                 .input_wrapper
                  button(type="submit") Search
-            img(src="/images/beach.jpg")                     
+    -const value=Object.values(flash)
+    -const keys=Object.keys(flash)  
+      if keys.length > 0
+          div(class="message message_"+keys) 
+             span=values
+             span.close_btn(onclick="this.parentNode.remove()") &times;
+      img(src="/images/beach.jpg")                     
 block content
