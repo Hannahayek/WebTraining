@@ -9,12 +9,14 @@ html
                a(href="/")
                 img(src="./images/logo.png")
                 ul
-                  li
-                    a(href="./sign-up") Sign up
-                  li
-                    a(href="./login") Login
-                  li
-                    a(href="./logout") Logout
+                 if !user
+                   li
+                     a(href="./sign-up") Sign up
+                   li
+                     a(href="./login") Login
+                 else    
+                   li
+                     a(href="./logout") Logout (#{user.first_name})
             .search_nav 
                form(action="/results" method="POST")
                 .input_wrapper

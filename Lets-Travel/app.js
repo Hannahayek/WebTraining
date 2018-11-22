@@ -54,8 +54,9 @@ app.use(flash());
  
 //function will run with every request,and we can access url variable in every template
 app.use((req,res,next)=>{
-res.locals.url=req.path
-res.locals.flash=req.flash(), //this will make flash available in all templates
+res.locals.user=req.user;
+res.locals.url=req.path;
+res.locals.flash=req.flash(); //this will make flash available in all templates
 next(); //or without next will freeze
 });
 

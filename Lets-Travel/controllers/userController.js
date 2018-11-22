@@ -82,3 +82,18 @@ exports.logout=(req,res)=>{
 
 }
 
+
+exports.isAdmin=(req,res,next)=>{
+try {
+
+    if(req.isAuthenticated()&& req.user.isAdmin){
+        next();
+        return;
+    }
+    res.redirect('/');
+} catch (error) {
+    next(error);
+}
+
+}
+
