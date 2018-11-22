@@ -4,8 +4,23 @@ var router = express.Router();
 /* require controller */
 const hotelController=require("../controllers/hotelController")
 const userController=require("../controllers/userController")
+
 /* GET home page. */
-router.get('/', hotelController.homePageFilters);
+ router.get('/', hotelController.homePageFilters);
+ 
+//below code will display number of visists in home page
+// router.get('/',function(req,res){
+//     if(req.session.page_views){
+//       req.session.page_views++;
+//       res.send('number of page visits:'+req.session.page_views)
+      
+
+//     }
+//     else{
+//           req.session.page_views=1;
+//           res.send('First Visit');
+//     }
+// });
 
 /* GET all hotels page. */
 router.get('/all',hotelController.listAllHotels);
