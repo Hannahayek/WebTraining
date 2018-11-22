@@ -71,3 +71,11 @@ exports.loginPost=Passport.authenticate('local',{
 
 });
 
+//logout
+exports.logout=(req,rest)=>{
+    //method provided by passport
+    req.logout();
+    res.redirect('/');
+
+}
+
