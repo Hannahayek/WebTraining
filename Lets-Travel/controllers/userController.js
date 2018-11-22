@@ -1,4 +1,7 @@
 const User=require('../models/user');
+
+//require passport model for login
+const Passport=require('passport');
 //express validator
 const  { check, validationResult }=require('express-validator/check');
 const { sanitize } =require('express-validator/filter');
@@ -48,11 +51,23 @@ return;
            console.log("error while registering! ",err);
            return next(err);
        }
-
+     //we add next to move to next function added in route
+     next(); //will move us to login post
     });
 }
 }
 
 
 ]
-   
+   //users route  for login page
+exports.loginGet=(req,res)=>{
+    res.render('login',{title:'Login to continue'});
+
+}
+//user login
+exports.loginPost=Passport.authenticate('local',{
+    successRedirect:'/',
+    failureRedirect:'/login'
+
+});
+
