@@ -35,13 +35,19 @@ mixin hotel(hotel,searchQuery)
                 .input_wrapper
                  button(type="submit") Search
    
-   if url==="/results"
-    .hotel_order_details
-       p='Number of Nights ' +searchQuery.duration
-       p='Departure Data '  +searchQuery.dateOfDeparture
-       - const costEach = searchQuery.duration * hotel.cost_per_night
-       - const totalCost = costEach * searchQuery.numberOfGuests
+   if url==="/results" || url.startsWith('/confirmation/')
+     .hotel_order_details
+        p=`umber of Nights  ${searchQuery.duration}`
+        p=`Departure Data  ${searchQuery.dateOfDeparture}`
+        - const costEach = searchQuery.duration * hotel.cost_per_night
+        - const totalCost = costEach * searchQuery.numberOfGuests
        
-       p='Total for Person $ '+ costEach
-       hr
-       h3='Total Cost: $'+ totalCost
+        p='Total for Person $ '+ costEach
+        hr
+        h3='Total Cost: $'+ totalCost
+        - const query = `id=${hotel._id}&duration=${searchQuery.duration}&dateOfDeparture=${searchQuery.dateOfDeparture}&numberOfGuests=${searchQuery.numberOfGuests}`;
+        if url==='/results'
+          a.button(href=`/confirmation/${query}`) Continue
+        else if url.startsWith('/confirmation/')
+           a.button(href="") Place your order!
+                

@@ -245,3 +245,5 @@ try { // _id:req.params.hotelId comes from the name in the route for this functu
          next(error)
      }
  }
+
+ 

@@ -1,10 +1,14 @@
 const User=require('../models/user');
+const Hotel=require('../models/hotels')
 
 //require passport model for login
 const Passport=require('passport');
 //express validator
 const  { check, validationResult }=require('express-validator/check');
 const { sanitize } =require('express-validator/filter');
+
+const querystring=require('querystring');
+
 
 exports.signUpGet=(req,res)=>{
     res.render('sign_up',{title:'User sign up'});
@@ -95,5 +99,18 @@ try {
     next(error);
 }
 
+}
+exports.bookingConfirmation=async(req,res,next)=>{
+    try {
+        const data=req.params.data;
+        const searchData=querystring.parse(data);
+        const hotel=await Hotel.find({_id:searchData.id}); 
+       res.render('confirmation',{title:'Confirm your booking',hotel,searchData});
+        //res.json(hotel);
+
+
+    } catch (error) {
+        next(error)
+    }
 }
 
