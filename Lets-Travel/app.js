@@ -5,6 +5,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose=require('mongoose');
+const compression=require('compression');
+//npm i helmet
+const helmet=require('helmet');
 
 var indexRouter = require('./routes/index');
 
@@ -25,6 +28,12 @@ const User=require('./models/user');
 const passport=require('passport');
 
 var app = express();
+
+//helmet 
+app.use(helmet());
+
+//compress responses //npm i compression
+app.use(compression());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
