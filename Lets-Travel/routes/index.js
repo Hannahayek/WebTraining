@@ -52,6 +52,8 @@ router.post('/admin/:hotelId/update',hotelController.upload
 ,hotelController.updateHotelPost);
 router.get('/admin/:hotelId/delete',hotelController.deleteHotelGet);
 router.post('/admin/:hotelId/delete',hotelController.deleteHotelPost);
+router.get('/admin/orders',userController.allOrders);
+
 
 //Users Routes
 router.get('/sign-up',userController.signUpGet);
