@@ -85,7 +85,23 @@ exports.logout=(req,res)=>{
     res.redirect('/');
 
 }
+exports.myAccount=async(req,res,next)=>{
+    try {
+        const orders=await Order.aggregate([
+            {$match:{user_id:req.user.id}},
+            {$lookup:{
+              from:'hotels',  
+              localField:'hotel_id',
+              foreignField:'_id',
+              as:'hotel_data'
+            }}
 
+        ])
+       res.render('user_account',{title:'My Account',orders});
+    } catch (error) {
+        next(error);
+    }
+}
 
 exports.isAdmin=(req,res,next)=>{
 try {
@@ -139,4 +155,6 @@ exports.bookingConfirmation=async(req,res,next)=>{
         next(error)
     }
 }
+
+
 
