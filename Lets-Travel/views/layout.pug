@@ -7,7 +7,7 @@ html
      header
             nav
                a(href="/")
-                img(src="./images/logo.png")
+                img(src="/images/logo.png")
                 ul
                  if !user
                    li
@@ -18,7 +18,7 @@ html
                    li
                      a(href="my-account") My Bookings/Account   
                    li
-                     a(href="./logout") Logout (#{user.first_name})
+                     a(href="/logout") Logout (#{user.first_name})
             .search_nav 
                form(action="/results" method="POST")
                 .input_wrapper

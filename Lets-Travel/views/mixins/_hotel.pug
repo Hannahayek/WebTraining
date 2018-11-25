@@ -37,7 +37,7 @@ mixin hotel(hotel,searchQuery)
    
    if url==="/results" || url.startsWith('/confirmation/')
      .hotel_order_details
-        p=`umber of Nights  ${searchQuery.duration}`
+        p=`Number of Nights  ${searchQuery.duration}`
         p=`Departure Data  ${searchQuery.dateOfDeparture}`
         - const costEach = searchQuery.duration * hotel.cost_per_night
         - const totalCost = costEach * searchQuery.numberOfGuests

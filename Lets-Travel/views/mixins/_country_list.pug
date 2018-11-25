@@ -1,4 +1,5 @@
 mixin countryList(country)
- li
+ -const countryname=country.toLowerCase()
+ li   
       a(href='/countries/'+country) #{country}
-         img(src='/images/countries/'+country+'.jpg')
+       img(src=`/images/countries/${countryname}.jpg`)
