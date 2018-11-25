@@ -49,5 +49,9 @@ mixin hotel(hotel,searchQuery)
         if url==='/results'
           a.button(href=`/confirmation/${query}`) Continue
         else if url.startsWith('/confirmation/')
-           a.button(href="") Place your order!
+            if user 
+             a.button(href=`/order-placed/${query}`) Place your order!
+            else 
+              a.button(href='/login') please login to order
+               
                 

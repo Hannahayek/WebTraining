@@ -1,6 +1,6 @@
 const User=require('../models/user');
 const Hotel=require('../models/hotels')
-
+const Order=require('../models/order');
 //require passport model for login
 const Passport=require('passport');
 //express validator
@@ -99,6 +99,32 @@ try {
     next(error);
 }
 
+}
+
+exports.orderPlaced=async(req,res,next)=>{
+    try {
+        const data=req.params.data;
+        const pasrsedData=querystring.parse(data);
+
+        const order=new Order({
+            user_id:req.user._id,
+            hotel_id:pasrsedData.id,
+            order_details:{
+                duration:pasrsedData.duration,
+                dateOfDeparture:pasrsedData.dateOfDeparture,
+                numberOfGuests:pasrsedData.numberOfGuests
+
+            }
+           
+
+        });
+        await order.save();
+        req.flash('info','thanks you , your order has been places!');
+        res.redirect('/my-account');
+
+    } catch (error) {
+        next(error);
+    }
 }
 exports.bookingConfirmation=async(req,res,next)=>{
     try {
